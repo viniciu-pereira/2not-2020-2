@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento para estudar variaveis</title>
+    <script>
+        'use strict' // use strict impede que variaveis sejam declaradas sem o uso de let var ou const, e alem disso, comentario pode ser usado como //
+        //iniciar variaveis diretamente é má pratica de programacao
+      
+      //decalracao de variaveis java script
+      //variaveis declaradas sem receber valor inicial = undefined
+      let a 
+      let b 
+      let c 
+    
+    //declarando variaveis juntas 
+    let x, y, z
+
+    let v1 = "Teste" //tipo string
+    let v2 = 2.75    //tipo number se é ponto flutuante ou não, é number
+    let v3 = true    //tipo boolean
+    let v4 = 70     //tipo number 
+    let v5 = "other try" //n importa as aspas, sao como em python 
+    let v6          //tipo undefined
+    let v7 = '356' // tipo string
+
+    //mudando valor de v2 para string ( o valor dentro da variavel tem tipo, a propria variavel nao)
+    v2 = 'batata'
+
+    //descobrindo tipo das variaveis
+    alert(typeof v1)
+    
+    //declarando varias variaveis com valor e sem valor
+    let q1 = 5, q2 = 4, q3 = '3', res 
+
+    //oeradores aritmeticos
+    res = q1 - q2 //subtracao
+
+    // subtracao entre interiro e string (com conversao de string para numero)
+    res = q1 - q3  
+
+    res = q1 - v2 // = NaN (Not a Number), falha na conversao de v2 para numero (dentro da string nao ha um numero valido)
+
+    //multiplicacao
+    res = q1 * q2 
+    res = q1 * q3 //com conversao para numero
+    res = q1 * v2 // da NaN
+
+    //divisao
+    res = q1 / q2 //1.25
+    res = q1 / q3  //1.66666666667
+    res = q1 / v2 //NaN
+
+    //adicao
+    res = q1 + q2 //9
+    res = q1 + q3 //53
+    res = q1 + v2 //5Batata, junta o valor com a a string, houve concatenacao
+    //converte para string e junta
+
+    //forçando a soma de numero com string em um valor numerico valido
+    //usando Number()
+    res = q1 + Number(q3) //8
+
+    //usando parseInt ()
+    res = q1 + parseInt(q3) //8
+
+    //potencia (** introduzido em 2015)
+    res = q1 ** q2 //625
+    res  = q1 ** q3 //125
+    res = q1 ** v2 //NaN
+
+    //ou
+
+    res = Math.pow(q1, q2) //outra forma de potenciacao
+
+    //modulo ou resto de divisao
+    res = 5 % 2 //1
+    //5 dividido por 2, da 2 e sobra 1
+    
+    res = 11 % 3 //2
+
+    res = 8 % 2 // 0, por dividir igualmente
+
+    alert(res)  //mostrando resultado
+
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>
