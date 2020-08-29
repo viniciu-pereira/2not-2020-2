@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+    <script>
+        'use strict' // use strict impede que variaveis sejam declaradas sem o uso de let var ou const, e alem disso, comentario pode ser usado como //
+        //iniciar variaveis diretamente é má pratica de programacao
+       
+       /* OPERADORES RELACIONAIS
+       >maior que 
+       <menor que 
+       >= maior ou igual
+       <= menor ou igual
+
+       */
+
+       //OPERADORES DE IGUALDADE
+       let a = 3, b = 6, c = '6' //operador de atribuição
+
+       //testando igauldade de duas variaveis, para testar a igualdade usamos 2 sinais iguais, um isnal serve para atribuição de valor
+       //alert (a == b) //false
+
+        //se usar alert(a = b), ele exibe o valor de b(b foi atribuido à a)
+        //alert(b == c) //true por converter string para numero
+
+        //OPERADOR DE IGUALDADE RESTRITA OU EXATAMENTE IGUAL
+        //tem que bater tanto o valor da variavel quanto o tipo dela
+        //alert(b === c) //false (operador)
+
+        //operador de diferença
+        //alert(a != b)//true, pois a é diferente de b
+
+        //alert(b != c)//false
+
+        //OPERADOR DE DIFERENÇA RESTRITA OU EXATAMENTE DIFERENTE
+        //alert(b !== c) //true porque sao exatamente diferentes um do outro 
+
+        /*
+            //OPERADORES LOGICOS
+
+            && and(E logico)
+            || ou (OU logico)
+            ! not (NOT logico)
+
+        */
+           //E ( tem precedencia sobre OR) ----------------------------------------------------------------
+           // alert(5 > 4 && 2 > 1) //true pois 5 é maior e 2 é maior 
+
+            //alert(5<4 && 2>1) //false porque um ja n é verdade
+
+            //ou---------------------------------------------------------------
+
+            //alert(5>4 || 2<1) //true por apenas um ser verdadeiro
+
+            //not (é a primeira coisa a ser resolvida e tem e tem precedencia muito alta, é resolvida primeiro)----------------------------
+
+            //5 + 4 * 2 = 13 (precedencia de operadores)
+            
+           // alert(!5) //false (5 nao é sero, portanto é true, o not vem depois e inverte a operacao)
+            //alert(!-4) //false
+
+            //alert(!0) //true, o unico numero que converte para false é o 0
+            /*
+                conversao de numeros para boleano
+
+                    0 sera convertido para false 
+                    qualquer valor nao 0 sera convertido para true 
+            */
+
+             //alert(!(5 > 4 && 2 > 1)) //fazendo que o parentese seja resolvido primeiro antes do not inverter
+        
+        //4<5 || 3 == 3 && 2 > 1 // true, pq resolve && primeiro
+
+        //PRECEDENCIA DOS OPERADORES------------------------------
+
+        // NOT > AND > OR
+        //() pode alterar a precedencia
+
+        //--------------------------------------------------------
+
+
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
