@@ -33,7 +33,7 @@
     let op2 = (ano % 4)
     let op3 = (ano % 100)
 
-    if (isNaN(ano)){
+    if (isNaN(ano) || (ano < 1582)){
         alert('ERRO')
     }
 

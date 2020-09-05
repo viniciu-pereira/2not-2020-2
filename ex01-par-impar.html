@@ -17,9 +17,9 @@
             ou ímpar e informe ao usuário usando alert().
         */
         
-    //start
-    let num = parseInt(prompt('informe um numero'))
-    let op = (num % 2)
+    //start 
+    let num = parseInt(prompt('informe um numero')) //prompt sempre recolhe respostas tipo string e parseInt tenta converter para inteiro
+    let op = (num % 2)                              //se digitar 12.2432423423, parseInt pega apenas o 12
 
     if(isNaN(num)){
         alert('ERRO, nao é numero')
