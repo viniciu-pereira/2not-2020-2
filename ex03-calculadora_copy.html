@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            Solicite ao usuário para informar dois números e um operador
+            matemaático. Você usará três prompt(), um para cada número e
+            o terceiro para o operador.
+
+            Aceite os seguintes operadores:
+            + => adição
+            - => subtração
+            *, X ou x => multiplicação
+            / ou : => divisão
+
+            Efetue o cálculo apropriado de acordo com o operador informado
+            e informe o resultado usando document.write().
+        */
+       //start
+
+       let n1 = parseFloat(prompt('Insira um número'))
+       let n2 = parseFloat(prompt('Insira o segundo número'))
+       let res
+       let op = prompt('Insira a operação desejada')
+       let errou = false 
+
+       if(isNaN(n1 || n2)){
+           alert('Erro, não sao numeros')
+           errou = true
+       }
+       
+       else if(op == '+'){
+           res = n1 + n2
+       }
+
+            else if(op == '-'){
+                res = n1 - n2
+            }
+                else if(op == '*' || op == 'x' || op =='X'){
+                   res = n1 * n2
+                   
+                }
+
+                else if(op == '/' || op == ':'){
+                        res = n1 / n2
+                    }
+                    else {
+                        alert('erro de operador')
+                        errou = true
+                    }
+
+    if (errou){
+    //document.write('A '+ op+ ' entre '+ n1+ ' e '+ n2+ ' resulta em: '+ res)
+    //}
+       //else if(errou == true)//usando string template(acentos graves - backtick)
+            document.write('Algum Erro')
+    }
+    
+        else{
+            document.write(`O resultado da operacao: ${n1} ${op} ${n2} é igual a ${res}.`)
+        }
+//the fucking end
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

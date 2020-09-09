@@ -31,27 +31,53 @@
        let n2 = parseFloat(prompt('Insira o segundo número'))
        let res
        let op = prompt('Insira a operação desejada')
+       let errou = false 
 
        if(isNaN(n1 || n2)){
            alert('Erro, não sao numeros')
+           errou = true
        }
        
-       else if(op == '+'){
-           res = n1 + n2
-       }
+       else {
+           switch(op){
+               case '+':
+                   res = n1 + n2
+                    break
+                case '-':
+                    res = n1 - n2
+                    break
 
-            else if(op == '-'){
-                res = n1 - n2
-            }
-                else if(op == '*' || op == 'x' || op =='X'){
-                   res = n1 * n2
-                }
-                else if(op == '/' || op == ':'){
-                        res = n1 / n2
-                    }
+                case 'X': //case vazio, quando aparece ele so vai pra baixo
+                case 'x':  //quando aparece so pula pro de baixo
+                case '*': 
+                    res = n1 * n2
+                    break //usado para sair do switch caso seja o resultado esperado
+                          //so nao usa break no default
+
+                case '/':
+                case ':':
+                    res = n1 / n2
+                    break
+
+                default: //else do switch
+                    //alert('erro de operador')
+
+                
+
+           }//fechamento do swith
+       }//fechamento do else if
+
+    if (errou){
+    //document.write('A '+ op+ ' entre '+ n1+ ' e '+ n2+ ' resulta em: '+ res)
+    //}
+       //else if(errou == true)//usando string template(acentos graves - backtick)
+            document.write('Algum Erro')
+    }
     
-    document.write('A ', op, ' entre ', n1, ' e ', n2, ' resulta em: ', res)
-
+        else{
+            document.write(`O resultado da operacao: ${n1} ${op} ${n2} é igual a ${res}.`)
+        }
+//the fucking end
     </script>
 </head>
 <body>
