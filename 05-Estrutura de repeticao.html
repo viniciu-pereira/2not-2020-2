@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estrutura de repeticao</title>
+    <script>
+        'use strict' // use strict impede que variaveis sejam declaradas sem o uso de let var ou const, e alem disso, comentario pode ser usado como //
+        //iniciar variaveis diretamente é má pratica de programacao
+    
+    /*
+        peça ao usuario para informar numeros repetidamente
+        esses numeros vao sendo somados ate q o usuario informe 0
+        Entao o resultado é exibido
+
+    */
+
+    let soma = 0
+
+    //primeiro passo ao usuario
+    let num = 1 //unico motivo da existencia é entrar no while
+
+    //estrutura de repeticao
+    /*caracteristicas do while
+        1- Local do teste: no inicio
+        2- Ele é executado no minimo 0 vezes (pq se a condicao de cara for 0, ele é pulado e passa pra proxima etapa
+        3- Numero de repeticoes indefinido, n se sabe quantas vezes ele vai repetir
+
+    */
+    while(num != 0 ){
+        
+        num = Number(prompt('Informe um numero para somar e 0 para finalizar')) //variavel criada dentro do while é valida somente nele, acabou ela morre(escopo)
+        if( ! isNaN(num)){
+        soma += num //soma = soma + num (mesma coisa q em C e em Python)
+         }
+    }
+    
+    document.write(`A soma é ${soma}`)
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

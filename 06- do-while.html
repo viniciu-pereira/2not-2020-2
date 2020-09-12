@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do-while-repeticao</title>
+    <script>
+        'use strict' // use strict impede que variaveis sejam declaradas sem o uso de let var ou const, e alem disso, comentario pode ser usado como //
+        //iniciar variaveis diretamente é má pratica de programacao
+       
+
+       /*
+         Loop da soma dos numeros ate q seja inserido 0
+       */
+
+      let soma = 0
+      let num 
+
+      do {
+        num = Number(prompt('Insira numero para somar, a soma para qunado inserir 0'))
+
+            if(isNan(num))
+                soma += num
+
+      }while(num != 0 ) //variavel criada dentro do  Do numeros morre na chave anterior ao while
+
+      document.write(`A soma é ${soma}`)
+      
+      /*
+      Caracteristica do do while 
+      1- Local de teste: no final
+      2- é executado no minimo 1x
+      3- numero de repeticoes: indeterminado
+      */
+    
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
