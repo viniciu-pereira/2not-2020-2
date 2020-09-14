@@ -23,6 +23,42 @@
             FEVEREIRO: 28 dias (29 em anos bissextos)
         */
 
+    let mes = parseInt(prompt('Informe o numero de um mes'))
+    //para ano bissexto
+    let ano = parseInt(prompt('insira o ano do mes requerido'))
+    let op = (ano % 400)
+    let op2 = (ano % 4)
+    let op3 = (ano % 100)
+    //fim variaveis ano bissexto
+
+    if (isNaN(ano) || (ano < 1582)){
+        alert('ERRO nos valores informados')
+    }
+
+    if ((op == 0) || ((op2 == 0) && (op3 != 0 ) )){
+        ano = 1 //se ano bissexto, ano recebe 1
+    }
+    
+    else
+        ano = 2 // se ano n for bissexto, ano recebe 2
+    //fim para ano bissexto
+
+    switch(mes){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+        document.write(`O mes: ${mes} tem 31 dias`)
+    }
+
+    if((mes == 2) && (ano == 1)){//verificacao se o mes é fevereiro e ano é bissexto
+        document.write(`O mes ${mes} tem 29 dias`)
+    }
+
+   
     </script>
 </head>
 <body>
