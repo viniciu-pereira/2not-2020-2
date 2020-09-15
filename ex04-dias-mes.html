@@ -53,11 +53,21 @@
         case 12:
         document.write(`O mes: ${mes} tem 31 dias`)
     }
-
+    //fevereiro em ano bissexto
     if((mes == 2) && (ano == 1)){//verificacao se o mes é fevereiro e ano é bissexto
         document.write(`O mes ${mes} tem 29 dias`)
     }
+    else if((mes == 2) && (ano == 2)){ //fevereiro em ano normal
+        document.write(`O mes ${mes} tem 28 dias`)
+    }
 
+    switch(mes){
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            document.write(`O mes ${mes} tem 30 dias`)
+    }
    
     </script>
 </head>
