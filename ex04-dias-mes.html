@@ -23,51 +23,64 @@
             FEVEREIRO: 28 dias (29 em anos bissextos)
         */
 
-    let mes = parseInt(prompt('Informe o numero de um mes'))
-    //para ano bissexto
-    let ano = parseInt(prompt('insira o ano do mes requerido'))
-    let op = (ano % 400)
-    let op2 = (ano % 4)
-    let op3 = (ano % 100)
-    //fim variaveis ano bissexto
+        /*
+            foi usado uma estrutura de repeticao para sempre questionar o ususario sobre o mes
+            nao para se for NaN menor q 1 ou maior q 12 
+        */
 
-    if (isNaN(ano) || (ano < 1582)){
-        alert('ERRO nos valores informados')
-    }
 
-    if ((op == 0) || ((op2 == 0) && (op3 != 0 ) )){
-        ano = 1 //se ano bissexto, ano recebe 1
-    }
-    
-    else
-        ano = 2 // se ano n for bissexto, ano recebe 2
-    //fim para ano bissexto
+let mes 
+do{
 
-    switch(mes){
-        case 1:
-        case 3:
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12:
-        document.write(`O mes: ${mes} tem 31 dias`)
-    }
-    //fevereiro em ano bissexto
-    if((mes == 2) && (ano == 1)){//verificacao se o mes é fevereiro e ano é bissexto
-        document.write(`O mes ${mes} tem 29 dias`)
-    }
-    else if((mes == 2) && (ano == 2)){ //fevereiro em ano normal
-        document.write(`O mes ${mes} tem 28 dias`)
-    }
+do {
+        mes = parseInt(prompt('Informe o numero de um mes de 1 a 12 ou 0 para parar'))
 
-    switch(mes){
-        case 4:
-        case 6:
-        case 9:
-        case 11:
-            document.write(`O mes ${mes} tem 30 dias`)
+}while(isNaN(mes) || (mes < 0) || (mes > 12))
+
+//para ano bissexto
+let ano = parseInt(prompt('insira o ano do mes requerido'))
+let op = (ano % 400)
+let op2 = (ano % 4)
+let op3 = (ano % 100)
+//fim variaveis ano bissexto
+
+//verificar se o ano é bissexto ou nao
+if ((op == 0) || ((op2 == 0) && (op3 != 0 ) )){
+    ano = 1 //se ano bissexto, ano recebe 1
+}
+
+else
+    ano = 2 // se ano n for bissexto, ano recebe 2
+//fim para ano bissexto
+
+switch(mes){
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+    document.write(`O mes: ${mes} tem 31 dias`)
+    break
+}
+//fevereiro em ano bissexto
+if((mes == 2) && (ano == 1)){//verificacao se o mes é fevereiro e ano é bissexto
+    document.write(`O mes ${mes} tem 29 dias`)
+}
+else if((mes == 2) && (ano == 2)){ //fevereiro em ano normal
+    document.write(`O mes ${mes} tem 28 dias`)
+}
+
+switch(mes){
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        document.write(`O mes ${mes} tem 30 dias`)
+        break
     }
+}while(mes > 0)
    
     </script>
 </head>
