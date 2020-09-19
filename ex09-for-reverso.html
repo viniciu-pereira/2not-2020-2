@@ -21,7 +21,20 @@
             7! = 7 * 6 * 5 * 4 * 3 * 2 * 1         
 
         */
+    
+    let n1
 
+    do{
+        n1 = parseInt(prompt('Insira o numero para fatorial'))
+    }while(isNaN(n1) || n1 <= 0)
+
+        
+    let fator = 1
+    for(let i = n1; i > 1; i--){
+        fator *= i
+    }
+
+    document.write(`O fatoreial de ${n1} é ${fator}`)
     </script>
 </head>
 <body>
