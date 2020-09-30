@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de modelo</title>
+    <script>
+        'use strict' // use strict impede que variaveis sejam declaradas sem o uso de let var ou const, e alem disso, comentario pode ser usado como //
+        //iniciar variaveis diretamente é má pratica de programacao
+       
+       //START
+
+       let lombo
+
+        //para lombofaixas
+        document.write('Os quilometros de lombofaixa:'+ '<br>')
+        for (let i = 1; i <= 400; i+=29 ){ //para i iniciando em 1, i sendo menor ou igual a 400, com passo de 29 km
+            document.write(i + '<br>') //escreve na página usando tag html para pular linhas
+        }
+
+        //segundo ponto, inserção de numero e verificação
+        let num
+        do{ 
+            num = parseInt(prompt('Insira um número entre 1 e 400'))
+        }while((num > 400) || (num <= 0)) //repita até que o numero seja maior que 400 ou menor que 0
+        
+    //terceira parte
+    switch(num){ //uso do switch case para esolher entre as opções listadas no enunciado e com opções definidas
+        case 92:
+        case 177:
+        case 291:
+        case 388:
+            document.write('Parabéns, você encontrou uma Unidade das Lojas Mazazine Luíza') 
+            break
+
+        case 153:
+        case 356:
+            document.write('Parabéns, você encontrou uma Unidade do Drive-thru dos Calçados Rafarillo')
+            break
+
+        case 187:
+             document.write('Parabéns, você encontrou um ponto de recarga da companhia São José')
+             break
+
+        case 210:
+            document.write('Parabéns, você encontrou uma Unidade da Padaria Estrela')
+            break
+
+        case 314:
+            document.write('Parabéns, você encontrou uma Unidade da Fábrica de Amendoim do Jubileu')
+            break
+
+        case 367:
+            document.write('Parabéns, você encontrou uma Unidade do Franca Acqua Parque II')
+            break
+
+            default:
+            document.write('Vapo, tem nada aqui não. Segue reto toda vida,meu fii.')  //fim do switch com default, caso seja escolhido numero random fora dos listados acima
+    }
+    
+//END
+    
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
