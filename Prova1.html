@@ -14,7 +14,7 @@
 
         //para lombofaixas
         document.write('Os quilometros de lombofaixa:'+ '<br>')
-        for (let i = 1; i <= 400; i+=29 ){ //para i iniciando em 1, i sendo menor ou igual a 400, com passo de 29 km
+        for (let i = 0; i <= 400; i+=29 ){ //para i iniciando em 1, i sendo menor ou igual a 400, com passo de 29 km
             document.write(i + '<br>') //escreve na página usando tag html para pular linhas
         }
 
@@ -22,7 +22,7 @@
         let num
         do{ 
             num = parseInt(prompt('Insira um número entre 1 e 400'))
-        }while((num > 400) || (num <= 0)) //repita até que o numero seja maior que 400 ou menor que 0
+        }while((isNaN(num)) || (num > 400) || (num <= 1)) //repita até que o numero seja maior que 400 ou menor que 0
         
     //terceira parte
     switch(num){ //uso do switch case para esolher entre as opções listadas no enunciado e com opções definidas

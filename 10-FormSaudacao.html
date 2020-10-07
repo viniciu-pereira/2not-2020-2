@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de modelo</title>
+    <style>
+        label {
+            /*Forçar o modo de exibição em bloco para os labels */
+            display: block;
+        }
+
+        fieldset label { /* se um label estiver dentro de um fieldset, ele volta a formatação padrao de ser escrito na mesma linha*/
+            display: inline;
+        }
+
+        fieldset {
+            border: 1px solid lightblue;
+            border-radius: 10px;
+            width: 50%; /* largura em porcentagem relativa ao tamanho da página, pode ser feito em px, fica: 200px por exemplo, desse modo não altera o tamanho conforme a pagina muda*/
+            
+        }
+
+        div, fieldset {
+            /* espaço em baixo da primeira div */
+            margin-bottom: 15px;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <h1> Formulário de Saudação</h1><!--input cria a caixa de entrada de dados-->
+
+   <div> <!-- Div faz usar todo o espaço da linha, um bloco-->
+    <label>Primeiro Nome:</label> <!-- Label são os titulos que se coloca nos inputs-->
+    <input type = "text" id="primeiro-nome" placeholder="Informe seu primeiro nome" size="50"> <!--placeholder cria um texto dentro da area de digitação-->
+    <!--size altera o tamanho da area de digitação-->
+   </div>   <!--Fim da div-->
+
+
+    <div> <!-- Div faz usar todo o espaço da linha, um bloco -->
+    <label>Segundo Nome:</label>
+    <input type = "text" id="segundo-nome" placeholder="Informe seu sobrenome" size="50"> <!--placeholder cria um texto dentro da area de digitação-->
+    <!--size altera o tamanho da area de digitação-->
+    </div> <!--Fim da div-->
+
+    <div> <!-- Div faz usar todo o espaço da linha -->
+    <label> Forma de tratamento</label>
+    <select id="forma tratamento"> <!--Select cria campo de seleção de opções-->
+        <option>(Selecione) </option> <!--opções do select-->
+        <option> Vossa Majestade</option>
+        <option> Exelentissimo/a</option>
+        <option> Ilustrissimo </option>
+        <option> Vossa senhoria </option>
+        <option> Senhor/a</option>
+        <option> Cremosissimo/a</option>
+    </select> <!--fim do select-->
+    </div> <!--Fim da div-->
+
+    <fieldset> <!--fildset cria contorno para opções, um quadrado como label do vba-->
+
+        <legend>Sexo</legend>
+        <input type="radio" id="masculino" name="sexo"> 
+        <label for="masculino"> Masculino</label> <!--Cria bolinha de seleção com titulo de masculino-->
+
+        <br> <!--Pula linha em html-->
+
+        <input type="radio" id="feminino" name="sexo" checked> 
+        <label for="feminino"> Feminino </label> <!--Cria bolinha de seleção com titulo de feminino(botao de radio sao exclusivas, so pode ser selecionado uma opçao-->
+
+        <!--name="sexo" faz com q todos formem um grupo de opções e nao deixa que duas sejam selecionadas juntas-->
+
+        <!--checked faz a opção do fieldset input ja vir marcada-->
+
+        <!--for="" faz o vinculo formal, ou seja, quando clicar em cima do masculino, ele selecione a opção-->
+
+    </fieldset> <!--Fim do fildset-->
+
+    <div>
+        <label>Hora do dia</label>
+        <input type="number" id="hora" min="0" max="23">
+    </div>
+
+    <fieldset>
+
+        <legend>Exibição da saudação</legend>
+        <input type="checkbox" id="alert" checked>
+        <label for="alert"> Exibir com alert()</label>
+
+        <br>
+
+        <input type="checkbox" id="document">
+        <label for="document"> Exibir no documento </label>
+
+    </fieldset>
+
+    <div id="saudacao"> </div>
+
+    <div> <!--Agrupa elementos dentro dele-->
+        <button id="enviar"> Enviar</button>
+    </div>
+
+   
+
+ <script>
+        'use strict' // use strict impede que variaveis sejam declaradas sem o uso de let var ou const, e alem disso, comentario pode ser usado como //
+        //iniciar variaveis diretamente é má pratica de programacao
+       
+    
+        </script> 
+
+</body>
+
+</html>
