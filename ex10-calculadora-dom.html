@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office"
+	xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 
-<!--[if gte mso 9]><xml>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+
+
+	<!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
 <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">FAUSTO GONCALVES CINTRA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
 <mso:Order msdt:dt="string">177000.000000000</mso:Order>
@@ -21,27 +23,26 @@
 
 <style>
 
-
-
 </style>
 
 
 <body>
 
-<h1> Exercicio 10- Calculdora DOM </h1>
+	<h1> Exercicio 10- Calculdora DOM </h1>
 
-<!--Primeiro campo de verificacao-->
-<div>
-    <label> Primeiro número </label>
-    <br>
-    <input type="number" id="n1" placeholder="Primeiro valor" size="50">  
+	<!--Primeiro campo de verificacao-->
+	<div>
+		<label> Primeiro número </label>
+		<br>
+		<input type="number" id="n1" placeholder="Primeiro valor" size="50">
 </div>
 
-<!--Campo de selecionar operacao-->
-<div>
-    <label> Operação aritmética </label>
-    <br>
-    <select id="op"> 
+		<!--Campo de selecionar operacao-->
+		<div>
+			<br>
+			<label> Operação aritmética </label>
+			<br>
+			<select id="op">
         <option>Selecione</option>
         <option>Soma</option>
         <option>Subtração</option>
@@ -50,22 +51,33 @@
         <option>Potenciação</option>
         <option>Resto da divisão</option>
     </select>
+		</div>
+
+		<!--Segundo campo de verificacao-->
+		<div>
+			<br>
+			<label>Segundo Número</label>
+			<br>
+			<input type="number" id="n2" placeholder="Segundo valor" size="50">
 </div>
 
-<!--Segundo campo de verificacao-->
-<div>
-    <label>Segundo Número</label>
-    <br>
-    <input type="number" id="n2" placeholder="Segundo valor" size="50"> 
-</div>
+			<!--Botão para calcular-->
+			<div>
+				<br>
+				<button id="calcular"> Calcular </button>
+			</div>
 
-<!--Campo do resultado-->
-<div>
-    <label>Resultado:</label>
-    
-</div>
-<script>
-        // 'use strict' impede que variáveis sejam declaradas
+            <div> Resultado: </div>
+
+			<!--Campo do resultado-->
+			<div id="result">
+				<br>
+				<label>''</label>
+			</div>
+
+
+			<script>
+				// 'use strict' impede que variáveis sejam declaradas
         // sem o uso de let, var ou const
         // Inicializar variáveis diretamente é má prática de
         // programação
@@ -87,9 +99,84 @@
 
         */
 
+       const eln1 = document.querySelector('#n1')
+       const elop = document.querySelector('#op')
+       const eln2 = document.querySelector('#n2')
+       const elresultado = document.querySelector('#result')
+       const elcalcular = document.querySelector('#calcular')
+
+    function validar () { /* função validar por conta da letra e funcionar na inserção dos valores*/
+        let valido = true
+
+        /* Teste do primeiro numero*/
+        if( (isNaN(eln1.value)) || (eln1.value.trim() == '')) {
+            alert('Insira um número válido')
+            eln1.focus()
+            valido = false
+        }
+        /*teste do segundo numero*/
+        else if( (isNaN(eln2.value)) || (eln2.value.trim() == '')) {
+            alert('Insira um número válido')
+            eln2.focus()
+            valido = false
+        }
+
+        /*Teste da seleção do select*/
+        else if (elop.selectedIndex <=0){
+            alert('Insira uma operação válida')
+            elop.focus()
+            valido = false
+        }
+
+        return valido
+    }
+
+    /*Função para selecionar operacao e realizar calculo*/  
+    function montar () {
+        let conta
+        let res1
+        let res2 
+
+        if(validar()) {
+        
+        res1 = parseFloat(eln1.value)
+        res2 = parseFloat(eln2.value)
+
+            switch(elop.selectedIndex){
+            
+            case 1:
+                conta = res1 + res2
+                break
+            
+            case 2:
+                conta = res1 - res2
+                break
+            case 3:
+                conta = res1 * res2
+                break
+            case 4:
+                conta = res1 / res2
+                alert(conta)
+                break
+            case 5:
+                conta = Math.pow(res1,res2) //função math.pow pesquisada no blog iMasters (https://imasters.com.br/desenvolvimento/conheca-o-operador-exponencial-javascript)
+                break
+            default:
+                conta = (res1 % res2)
+                alert(conta)
+                break
+        }
+
+        elresultado.innerText = conta
+    }
+    }
+
+    elcalcular.addEventListener('click',montar)
+
     
 
-    </script>
-    
+			</script>
+
 </body>
+
 </html>
