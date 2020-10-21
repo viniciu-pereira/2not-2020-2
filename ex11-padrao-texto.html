@@ -94,36 +94,64 @@
         let elgerar = document.querySelector('#gerar');
         let elresult = document.querySelector('#resultado');
 
-    function validar (){
-        let valido = true
+    function validar (){ //função para validacao das entradas
+        let valido = true //varaivel para validacao
 
-        if(elletra.value.trim() == ''){
+        if(elletra.value.trim() == ''){  //testa se nao é espaço vazio 
             alert('Caractere mal informado')
             elletra.focus()
             valido = false
         }
 
-        else if( (elnum.value < 1) || (elnum.value > 100) || (elnum.value == 'e') ) {
+        else if( (elnum.value < 1) || (elnum.value > 100) || (elnum.value == 'e') ) { //testa os limites do valor e se for letra e q pode ser inserida na caixa
             alert('Número mal informado')
             elnum.focus()
             valido = false
         }
 
-        return valido
+        return valido //retorna o valor da variavel para fim de decisao
     }
 
-    function montar(){
-        //let linha = 1
+    function montar(){ //função para montar o requisito 
+        let linha = elnum.value
 
         if(validar()){
 
+            for(let i=1; i<=linha; i++) { //for para definir i como a quantidade de linhas a serem feitas
+
+                for(let j=1; j<=i; j++){ //for para definir qual caractere sera escrito na pagina
+                   elresult.innerHTML += elletra.value //atualiza a div conforme o caractere e conforme numero de linhas
+                }
+               //document.write('<br>'); //testes para pular linha
+               elresult.innerHTML += '<br/>' //atualoza a div para cada passagem pulando a linha 
+               //'<br/>' - teste para pular linha
+            
+            }
+
         }
     }
+        elgerar.addEventListener('click',montar)//observando pra quando o botao é clicado
 
 
-   
 
-        elgerar.addEventListener('click',validar)
+        /* Dificuldades neste exercicio
+
+        1- Como inserir os dados numericos, descobri o type="range", tentei usa-lo, mas n consegui capturar o valor de entrada, etão decidi usar o padrao mesmo
+        
+        2- como fazer a 'piramide' em si, fui a pesquisa  e testes, decidi usar o for por pensar ser o mais facil de controle e por ja ter a atualização de controle imbutida, nas pesquisas encontrei o video : (https://www.youtube.com/watch?v=ItOmYp9AKOA&ab_channel=Chidre%27sTechTutorials) que ajudou na lógica e fui pesquisar tambem a respeito do brak row dentro da div, encontrei pessoas falando sobre em blogs como: (https://pt.stackoverflow.com/questions/160577/exibir-dados-em-div-pulando-linha#:~:text=Usando%20%3A&text=Somei%20com%20um%20para%20quebrar%20a%20linha ) que deram boas ideias até eu chegar na que usei de fato.
+
+        3- Tentei fazer com q cada vez q fosse apertado o botão ele limpasse o conteúdo da div, mas sempre dava erro ou conflito com o for, então deixei de lado.
+
+        Acho q essas foram as principais.
+        
+        
+        
+        
+        
+        
+        
+        
+        */
 			</script>
 </body>
 

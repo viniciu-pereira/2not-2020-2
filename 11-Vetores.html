@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de modelo</title>
+    <script>
+        'use strict' // use strict impede que variaveis sejam declaradas sem o uso de let var ou const, e alem disso, comentario pode ser usado como //
+        //iniciar variaveis diretamente é má pratica de programacao
+       
+       /* Declarando um vetor vazio*/
+    
+    //Forma moderna
+    let vetor1 = [] //vetor 1 declarado com 0 elementos dentro dele
+
+    //Forma legado
+    let vetor2 = Array() //Vetor 2 criado com 0 elementos dentro dele
+
+    /*Decalrando vetor com elementos dentro*/
+
+    //Forma moderna
+    let carros = ['fusca','del-rey','passat','opala'] //fusca posição 0, delrei na posição 1, ...(0, 1, 2, 3, 4, ...)
+    //a contagem dos elementos= total - 1(4 elementos, ultimo elemento na posição 3)
+
+    //Forma legado
+    let cores = Array('verde','laranja','branco')
+    let numeros = Array(2,3,5,7,11,13,17,19)
+
+    //vetor de tipos misturados
+    let mistura = ['joao das couves',63, false, null, undefined]
+
+    let frutas = []
+
+    /*preencher vetor*/
+    //push() : insere novos elementos no final do vetor, adiciona na sequencia podendo ser mais de 1 elemento por vez
+    frutas.push('laranja')  
+    frutas.push('melanciaaaa')
+
+    //ou
+
+    frutas.push('maça','limao','pera')
+    console.log(frutas)
+
+    //unshift adiciona na posição 0 (inicio) e desloca todos os outros pra uma posição
+    frutas.unshift('jabuticaba')
+    frutas.unshift('amora')
+
+    //pop() deleta o ultimo elemento do vetor
+    //retira um elemento do final do vetor e joga fora o q foi retirado sendo apenas 1 por vez
+    frutas.pop()
+
+    //retirada de elemento guardando o elemento retirado, dessa forma ele salva o q foi retirado
+    let retirado = frutas.pop()
+
+
+    //shift retira o primeiro elemento (0) 
+    //retira somento 1 elemento por vez
+    frutas.shift()
+
+    //splcie faz varias coisas, uma delas é a inserção em posição expecifica
+    //paramentros para inserção na posição 2:
+    //inserir na posição 2, apagar 0 elementos, o q vai ser inserido
+
+    //1: a posição onde será inserido e empurra os outros pra frente
+    //2: quantos elementos serao apagados (para inserir deve ser 0)
+    //3 em diante: os elementos a serem inseridos
+    frutas.splice(2, 0, 'morango')
+
+    frutas.splice(1, 0, 'jaca', 'ameixa')
+
+    /*Splice para substituição*/
+//na posicção 4 apaga o elemento e substitui por manga
+frutas.splice(4, 1, 'manga')
+
+//splice para retirada em posição expecifica
+//1: posicao de retirada
+//2: quantidade de elementos a retirar, splice pode retirar mais de uma vez e joga os retirados em um outro vetor
+retirado = frutas.splice(1, 1)
+console.log(retirado)
+
+//colcando dados para base de teste
+frutas.push('framboesa','caju','maracujá','mexerica')
+
+
+//retirando varios de uma vez
+retirado = frutas.splice(4, 3)
+console.log(retirado)
+
+
+//retirando o ultimo elemento do vetor:
+frutas.splice(-1,1) //numero de posição negativo, ele conta de tras para frente, ou seja, retira do fim do vetor
+
+/*lenght: retorna o numero de elementos do vetor:*/
+console.log('Numero de elementos:',frutas.length) //nao pode ser lenght
+
+
+//saber se tem determinado elemento dentro do vetor
+console.log('manga ',frutas.indexOf('manga')) //ele volta a posição do elemento dentro do vetor, se existir mais de um, ele volta a posição do primeiro
+
+//fruta q n existe no vetor
+console.log('melao',frutas.indexOf('melao')) //se n existe, ele volta o valor negativo ou -1, q é uma posição impossivel pra um vetor
+
+//testar se tem elemento dentro do vetor com condicional
+if (frutas.indexOf('manga') >= 0){
+    console.log('manga existe')
+}
+else 
+    console.log('manga tem naum')
+
+
+/*includes*/
+/* includes() retorna true se existe ou flase se nao existe*/
+console.log('manga ',frutas.includes('manga'))
+console.log('morango ',frutas.includes('morango'))
+console.log('banana ',frutas.includes('banana'))
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
