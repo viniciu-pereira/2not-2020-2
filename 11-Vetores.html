@@ -7,7 +7,8 @@
     <script>
         'use strict' // use strict impede que variaveis sejam declaradas sem o uso de let var ou const, e alem disso, comentario pode ser usado como //
         //iniciar variaveis diretamente é má pratica de programacao
-       
+       console.log('--------------------------------------------------------------')
+
        /* Declarando um vetor vazio*/
     
     //Forma moderna
@@ -30,6 +31,7 @@
     let mistura = ['joao das couves',63, false, null, undefined]
 
     let frutas = []
+    console.log('--------------------------------------------------------------')
 
     /*preencher vetor*/
     //push() : insere novos elementos no final do vetor, adiciona na sequencia podendo ser mais de 1 elemento por vez
@@ -99,6 +101,7 @@ console.log('manga ',frutas.indexOf('manga')) //ele volta a posição do element
 
 //fruta q n existe no vetor
 console.log('melao',frutas.indexOf('melao')) //se n existe, ele volta o valor negativo ou -1, q é uma posição impossivel pra um vetor
+console.log('--------------------------------------------------------------')
 
 //testar se tem elemento dentro do vetor com condicional
 if (frutas.indexOf('manga') >= 0){
@@ -114,7 +117,68 @@ console.log('manga ',frutas.includes('manga'))
 console.log('morango ',frutas.includes('morango'))
 console.log('banana ',frutas.includes('banana'))
 
+if(frutas.includes('jambo')){
+    console.log('tem')
+}
+else {
+    console.log('tem naum')
+}
 
+console.log('--------------------------------------------------------------')
+console.log(frutas)
+alert(frutas)    //da certo, mas n é baum
+document.write(frutas) //da certo, mas n é baum
+
+/* Slice() 'fatia' um vetor, gerando um outro vetor apenas com o pedaço desejado*/
+
+let parte = frutas.slice(1, 4) 
+/*
+parametros:
+1: posicao inicial
+22: posição final
+SLICE INCLUI A POSIÇÃO INICIAL, MAS NAO INCLUI A POSIÇÃO FINAL, OU SEJA, POSIÇÃO FINAL = 4, VETOR TEM 3 ELEMENTOS
+*/
+console.log(frutas)
+console.log(parte)
+
+
+let outraParte = frutas.slice(2) // pega o vetor todo à partir da posicao indicada
+
+console.log(outraParte)
+
+
+/*Acessandp posiçoes do vetor*/
+//A fruta q esta na terceira posicção do vetor
+
+console.log('Fruta na posição 3: ' + frutas[2]) //lembrando q  começa a contagem no 0
+
+//primeira fruta
+console.log('Primeira fruta: ' + frutas[1]) // posicao 0
+
+//ultima posicao
+console.log('O ultimo elemento: ' + frutas[frutas.length - 1])//length - 1 pq a contagem começa no 0, ent o ultimo elemento ta na posição -1 do tamanho do vetor
+console.log('O tamanho do vetor: ' + frutas.length)
+console.log('Posição do ultimo elemento: ' + [frutas.length - 1])
+
+console.log('--------------------------------------------------------------')
+
+/*  percurso em ordem crescente*/
+let i
+for(i = 0; i < frutas.length; i++){
+    console.log(i  + frutas[i])   //mostra cada fruta na determinada posição i
+}
+
+console.log('Valor final de i: ' + i)
+
+console.log('--------------------------------------------------------------')
+
+/*Ordem inversa*/
+
+for(let i = [frutas.length - 1]; i >= 0; i--){
+    console.log(i + frutas[i])
+}
+
+console.log('--------------------------------------------------------------')
     </script>
 </head>
 <body>
