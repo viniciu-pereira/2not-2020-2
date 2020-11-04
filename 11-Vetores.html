@@ -179,6 +179,36 @@ for(let i = [frutas.length - 1]; i >= 0; i--){
 }
 
 console.log('--------------------------------------------------------------')
+
+    /*For of*/
+    /*ÉRCURSO USANDO ESSE LOOP:
+        -SEMPRE PERCORRE TODOS OS ELEMENTOS DO PRIMEIRO AO ULTIMO
+        -NAO É POSSIVEL USAR PARA PERCORRER NA ORDEM DECRESCENTE
+    */
+
+console.log('Frutas dentro do vetor usando for of:')
+
+for(let fruta of frutas){ //fruta é somente uma variavel qualquer
+    console.log(fruta)
+}
+/* 
+--frutas(plural) é vator
+--fruta(singular) é variavel que a cada interação do loop receberá o valor de um dos elementos do vetor, na ordem
+*/
+
+console.log('--------------------------------------------------------------')
+
+/*USANDO O FOR EACH ()*/
+
+/*
+--Função q todo vetor possui e espera, como parametro, outra função,
+que recebe outro parametro, que contem cada um dos elementos do vetor
+*/
+
+console.log('Frutas dentro do vetor usando for each:')
+frutas.forEach(function(fruta){ 
+    console.log(fruta)
+})
     </script>
 </head>
 <body>
