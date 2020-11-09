@@ -2,11 +2,36 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de documento HTML</title>
-    <script>
-        // 'use strict' impede que variáveis sejam declaradas
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modelo de documento HTML</title>
+
+
+</head>
+
+<body>
+
+	<h1> Ex13 - Vetor em ordem </h1>
+
+	<div>
+		<label> Insira um numero: </label>
+		<br>
+		<input type="number" id="n1" size="50">
+    </div>
+
+		<br>
+
+		<div>
+			<button id="enviar">  Enviar </button>
+		</div>
+
+		<br>
+
+		<div id="resultado"> </div>
+
+
+		<script>
+			// 'use strict' impede que variáveis sejam declaradas
         // sem o uso de let, var ou const
         // Inicializar variáveis diretamente é má prática de
         // programação
@@ -35,14 +60,33 @@
 
             A cada inserção, exiba os elementos do vetor dentro da div de 
             resultados. Para gerar a exibição, faça um loop for..of.
-
         */
-        
-    </script>
-</head>
 
-<body>
+       let ordem = []
 
+       let eln1 = document.querySelector('#n1')
+       let elresultado = document.querySelector('#resultado')
+
+    function validar(){ //funcao para validacao da entrada
+
+        let valido = true
+
+       if(isNaN(eln1)){
+           alert('Insira um elemento valido')
+           valido = false
+       }
+       return valido // valor de retorno da validacao
+    }//function end
+
+    function montar (){ //funcao para escrita na pagina 
+        if(validar()){
+            elresultado.innerText = 'oi'
+
+        }
+    }//funtion end
+
+    elresultado.addEventListener('click',montar)
+		</script>
 </body>
 
 </html>
