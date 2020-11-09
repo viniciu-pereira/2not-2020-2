@@ -57,8 +57,88 @@
             5) Modifique o vetor de acordo com as alterações.
                 Faça um loop FOR...OF para exibir as estações e depois
                 passe um traço horizontal (<hr>).
-  
         */
+    
+    
+    //Parte 1
+    let estacoes = []
+
+    estacoes.push('Santa Terezinha', ' Estação',' Centro', ' Jardim Lima', ' Aeroporto I')
+    let i
+    for (i=0; i < estacoes.length; i++ ){
+        document.write(estacoes[i] + '<br>')
+    }
+
+    document.write('<hr>')
+
+//parte 2
+
+estacoes.unshift('City Petrópolis')
+estacoes.push('Aeroporto IV')
+
+for(let bairro of estacoes) {
+            document.write(bairro + '<br>')
+        }
+        document.write('<hr>')
+
+//parte 3
+/*Já em 2125, foi criada a estação Vila Imperador, entre
+            as estações Santa Teresinha e Estação, para atender à grande
+            demanda da maior universidade da cidade, a Fatec de Franca.
+            Um ano depois, a estação Jardim Alvorada passou a funcionar
+            entre as estações Jardim Lima e Aeroporto I.
+    
+            3) Insira as novas estações no vetor nas posições apropriadas.
+                Faça um loop for TRADICIONAL EM SENTIDO INVERSO para exibir
+                as estações e depois passe um traço horizontal (<hr>).
+*/
+
+estacoes.splice(2,0,'Vila Imperador')
+estacoes.splice(5,0,'Jardim Alvorada')
+
+for(let i = [estacoes.length - 1]; i >= 0; i-- ){  //i começa na ultima posicao [tamanho do vetor - 1]
+    document.write(estacoes[i] + '<br>')           //i vai desde a ultima posição ate a ser igual a 0 [ por isso o >]
+}                                                  //i-- pra ir retirando contagem do controle
+
+document.write('<hr>')
+//Parte 4
+/*Em 2130, a estação Centro foi desativada, e em seu lugar duas
+            novas estações entraram em funcionamento: as estações 9 de Julho
+            e Champagnat.
+            
+            4) Modifique o vetor de acordo com as alterações.
+                Faça um loop for TRADICIONAL para exibir as estações e depois
+                passe um traço horizontal (<hr>).
+*/
+estacoes.splice(4,1,'9 de Julho', 'Champanhat')
+
+for(let i = 0; i < estacoes.length; i++){
+    document.write(estacoes[i] + '<br>')
+}
+
+document.write('<hr>')
+
+//Parte 5
+/*
+Em 2133, no entanto, Franca entrou em guerra com os
+            restinguenses, que invadiram e destruíram as duas estações
+            mais ao sul do metrô de Franca. Neste mesmo ano, em meio
+            à crise, foi fechada a estação Santa Teresinha.
+    
+            5) Modifique o vetor de acordo com as alterações.
+                Faça um loop FOR...OF para exibir as estações e depois
+                passe um traço horizontal (<hr>).
+*/
+
+estacoes.splice(8,2)
+estacoes.splice(1,1)
+
+for(let bairro of estacoes){
+    document.write(bairro + '<br>')
+}
+
+document.write('<hr>')
+
 
     </script>
 </head>
