@@ -134,6 +134,7 @@ document.write('----------------' + '<br>')
     document.write('7 elevado a 2 é' + potencia(7) + '<br>')
     document.write('9 elevado a 2 é' + potencia(9) + '<br>')
     
+    document.write('----------------' + '<br>')
 
     //----------------------------------------------------------------------------------------------------
 
@@ -176,6 +177,7 @@ document.write('----------------' + '<br>')
     let abc = somaTudoAcumulado(1000,2,8,0,3,7,10)
     document.write('somaTudoAcumulado: '+ abc + '<br>')
 
+document.write('----------------' + '<br>')
 //----------------------------------------------------------------------------------------------------------
     //EXPRESSAO DE FUNÇÃO
 
@@ -194,7 +196,7 @@ document.write('----------------' + '<br>')
         }
     }
 
-    document.write('Minimo 5,7 =>' + min(5,7) + '<br>')
+    document.write('Minimo 5,7 =>' + minimo(5,7) + '<br>')
 
     //por isso mais comum, em expressoes de função é usar 
     //funcoes anonimas
@@ -204,6 +206,7 @@ document.write('----------------' + '<br>')
 
     document.write('Mult 7 * 9 =>' + mult(7,9) + '<br>') //quando uma função é atribida a uma variavel, ela so pode ser chamada APOS a declaracao da citada variavel.
 
+document.write('----------------------------------' + '<br>')
     //-------------------------------------------------------------------------------------------
 
     //ARROW FUNCTION
@@ -211,6 +214,7 @@ document.write('----------------' + '<br>')
     //1) apenas um argumento 
     //2) o corpo da função  tem apenas uma linha
     //3) a função retorna valor
+    //4) funciona bem qunado tem pouca linha de código
 
     function quadrado(x){
         return x * x
@@ -222,6 +226,40 @@ document.write('----------------' + '<br>')
     //3) entre o argumento e o corpo da funcao coloca-se o seimbolo =>
     //4) o corpo da funão vem em seguida sem as chaves e sem a palavra return
     let quadrado2 = x => x*x
+
+    document.write('Quadrado de 11 => ' + quadrado2(11) + '<br>')
+
+    //Quando temos mais de um parametro, os parenteses e volta dos
+    //argumentos voltam a ser obrigatórios
+    let substract = (a,b) => a - b
+
+
+    //Quando a funcção nao tem argumentos, os parenteses tambem 
+    //voltam a ser obreigatorios
+    let aleatorio1a60 = () => Math.floor(Math.random() *60 + 1)
+
+    //Quando a minha função tem mais de uma linha de corpo
+    //voltam as chaves
+    let eq2grau = (a,b,c) => {
+        let delta = b ** 2 - (4 * a * c)
+
+        if(delta == 0){
+            return -b / (2 * a)
+        }
+
+        else if(delta > 0){
+            let raiz1 = (-b + Math.sqrt(delta)) / (2 * a) //função q calcula raiz quadrada
+            let raiz2 = (-b - Math.sqrt(delta)) / (2 * a)
+            return [raiz1, raiz2]
+        }
+        else {
+            return undefined
+        }
+    }
+
+    document.write(`Eq 2 grau: =>` + eq2grau(1,5,6))
+    
+    document.write('<br>' + '----------------' + '<br>')
 
 
         </script>
