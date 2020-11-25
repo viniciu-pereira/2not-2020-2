@@ -40,6 +40,66 @@
 
 <body>
 
+    <h1>Funão Mes</h1>
+    <label> Meses: </label>
+
+    <div>
+        <select id="mes">
+            <option>Selecionar</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+        </select>
+    </div>
+
+    <br>
+
+    <div id="resultado"></div>
 </body>
+
+<script>
+    let elMmes = document.querySelector('#mes')
+    let elResultado = document.querySelector('#resultado')
+
+    
+    //primeira função
+    //essa função recebe um valor, mas ele deve ser convertido para numero antes de entrar nela, pois vem do select como string
+    function NomeMes(numMes){ //recebe um numero de ume mes
+        const meses = [
+            'janeiro','fevereiro','março','abril',
+            'maio','junho','julho','agosto','setembro',
+            'outubro','novembro','dezembro'
+        ]
+        return meses[numMes - 1] //pega o elemento dentro do vetor na posição anterior(vetor começa no 0) e retorna o valor daquele mes
+    }
+
+    //declaração da segunda função
+    function selecaoMudou(){
+        //verificar se a seleção é valida
+        if(elMmes.selectedIndex === 0){
+            alert('numero de mes invalido')
+            elMmes.focus()
+        }
+
+        else {
+            //chamada à primeira função
+            let nome = NomeMes(elMmes.selectedIndex)
+            elResultado.innerText = nome
+            //ou: elResultado = NomeMes(elMes.selectedIndex)
+        }
+    }
+
+
+elMmes.addEventListener('change',selecaoMudou)
+</script>
 
 </html>
