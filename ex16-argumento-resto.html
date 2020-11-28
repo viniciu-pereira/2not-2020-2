@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -26,14 +26,34 @@
             Retorne o resultado.
         */
         
+        function efetuar(oper, ...nums){ //argumento de resto, o primeiro elelemento cai dentro do oper, o resto deses vai para nums
+
+            let res //vao ser usado depois
+
+            if(oper){ //se oper for verdadeiro
+                let res = 1 //elemento neutro da multiplicacao
+                for(let n of nums){ //O argumento de resto é um vetor
+                    res *= n
+                }
+
+                return res 
+            }
+            else {
+                res = 0 //elemento netro da adição
+                for(let n of nums){ //for of, o jeito mais simples e rapido de se percorrer um vetor 
+                    res += n //n é uma variavel criada para adcionar os elementos no tamanho do vetor, res vai sendo atualizada com a operação + até acabar
+                }
+                return res
+            }
+        }
+
+        let mult1 = efetuar(true,4,8,2,-1,9,3) //chamada de função com os parametros a serem mandados para ela
+        let mult2 = efetuar(false,1,2,3,4,5,6,7,8,9,10) //chamada de função com os parametros a serem mandados para ela
+
+        document.write(`Multiplicacao 1 :${mult1}; <br> soma 1: ${mult2} <br>`) //mostragem na pagina
+
     </script>
 
-<!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Estruturas de Dados-A-M-ANALISE E DESENV. DE SISTEMAS-109-20202 Members</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
-<mso:SharedWithUsers msdt:dt="string">85;#Estruturas de Dados-A-M-ANALISE E DESENV. DE SISTEMAS-109-20202 Members</mso:SharedWithUsers>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
 </head>
 
 <body>

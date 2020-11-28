@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+
+        /*
+            Declare uma expressão para uma função que receba dois
+            números e retorne:
+            -1, se o primeiro número for maior que o segundo
+            0, se ambos os números forem iguais entre si
+            1, se se o segundo número for maior que o primeiro
+
+            Tente chamar a expressão de função ANTES e DEPOIS de
+            declará-la. Em que situação a chamada funciona?
+        */
+
+       //expressao de função = jogar funcao dentro de variavel
+       //A DECALRACAO NAO OBEDECE A EXECUCAO TOP DOWN, DECALRACAO DA FUNCAO FURA A FILA, AS CHAMADAS CONSEGUEM LOCALIZAR E EXECUTA NORMALMENTE
+       //QUANDO A FUNÇÃO ESTA DENTRO DA VARIAVEL, ELA PASSA A EXISTIR QUANDO É DECLARADA, 
+       //
+
+
+        
+
+    const comparar = function(a, b){ //funcao dentro da variavel
+
+            //quando if, while, for tiver apenas 1 linha de código, as chaves podem ser omitidas
+            if(a > b) return -1
+            if(a == b) return 0
+            else return 1
+    }
+
+    alert(comparar(5,1))
+//  TIPOS DE DADOS NO JAVASCRIPT:
+
+/*
+    1-Number
+    2- Boolean
+    3- String
+    4- Function
+    5- Object (vetores e objetos em sentido estrito)
+    6- Undefined
+    7- BigInt (muito recente)(inteiros muito grandes ou muito pequenas)
+
+*/
+
+function fatorial(n) {
+    let res = 1
+    for (let i = n; i> 1; i--) res *= i
+    return res
+}
+
+alert(fatorial(200))
+
+//pode-se usar _ para separar milhares: 1_200, 4_000_000
+
+/*
+let x = 1_200 * 4_000_000
+alert(x.toLocaleString('pt-BR')) para separar pontos na mostragem
+*/
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
