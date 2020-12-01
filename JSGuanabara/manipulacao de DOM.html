@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Iniciando Estudos com DOM</h1>
+    <p> Resultado </p>
+    <div id="msg"> Clique em mim </div>
+
+
+    <script>
+
+        //selecionando o primeiro paragrafo por tag
+        let p1 = document.getElementsByTagName('p')[0] //paragrafo 0 é o primeiro paragrafo, js comoeça no 0
+         //escrevendo na tela o resultado capturado do docuemnto que agora está dentro de p1
+        document.write('Conteúdo do primeiro parargrafo: ' + p1.innerText)
+
+        //variavel para a mudança do fundo em js
+        //let body = document.body
+        //body.style.background = 'black'
+
+
+    //pegando por id e deixando a div com fundo verde
+    let elmsg = document.querySelector('#msg')
+    elmsg.style.background = 'green'
+
+    </script>
+</body>
+</html>
