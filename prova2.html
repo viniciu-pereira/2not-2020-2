@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acumulador</title>
+
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+
+
+    </script>
+
+    <style>
+        * {
+            font-family: 'Candara', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        html,
+        body {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-size: 12pt;
+            line-height: 18pt;
+            color: #444;
+        }
+
+        body {
+            background-color: indigo;
+            background-image: linear-gradient(slateblue 50%, indigo);
+            background-repeat: no-repeat;
+            padding: 0;
+        }
+
+        body>div {
+            background: whitesmoke;
+            margin: 3%;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            color: indigo;
+            text-shadow: 2px 2px 2px rgba(75, 0, 130, 0.5);
+
+        }
+
+        div>div {
+            padding: 10px;
+            width: 70%;
+            max-width: 90%;
+            min-width: 250px;
+            margin: 1% auto;
+            text-align: center;
+        }
+
+        div label {
+            display: block;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 8px;
+            border-radius: 8px;
+            color: white;
+            background-color: indigo;
+        }
+
+        p {
+            display: inline-block;
+            width: 30%;
+            margin: 0;
+        }
+
+        p span {
+            font-weight: bold;
+            color: indigo;
+        }
+
+        div div:last-of-type {
+            background-color: lavender;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Acumulador</h1>
+
+        <div>
+            <label>Informe um número</label>
+            <input id="num" type="number">
+        </div>
+
+        <div>
+            <button id="acumular">Acumular!</button>
+        </div>
+
+        <div>
+            <p>Quantidade: <span id="quant">0</span></p>
+            <p>Média: <span id="media">0</span></p>
+            <p>Soma: <span id="soma">0</span></p>
+        </div>
+    </div>
+
+    <script>
+    let elnum = document.getElementById('num') //captura do elemento de numero
+    let elacumular = document.querySelector('#acumular') //captura do elemento do botao
+    let elquantidade = document.getElementById('quant') //captura do elemento de quantidade
+    let elmedia = document.querySelector('#media') //captura do elemento da media
+    let elsoma = document.querySelector('#soma') //captura do elemento da soma
+
+    let vetor = [] //declaraao do vetor
+
+    //5
+    let somaTudo = function(inicial, nums){ //5- expressao de funcao que recebe vetor e soma seus valores
+
+    let soma = inicial
+
+        for(let soma of nums){ //for of para soma dos valores recebidos
+            soma += nums //iteracao do valor a cada apssagem
+        }
+        return soma //retorno do resultado
+    }
+
+    //6
+    function valorDigitado(){ 
+
+    let numeroDigitado = parseInt(elnum.value) //conversao para inteiro
+    let valido = true   //validacao
+        
+        if(isNaN(numeroDigitado)){ //validacao 
+            alert('Insira um numero válido')
+            elnum.focus() //foco no elemento
+            valido = false
+        }
+        
+        if(valido){ //se for valido
+            vetor.unshift(numeroDigitado)  //insere no inicio do vetor e desloca para o lado
+        }
+    }
+
+    //d
+    let retornoDaFuncao = somaTudo(vetor)
+
+    //e
+    let ResultadoMedia = (retornoDaFuncao/vetor.length) //media dos resultados dos numeors inseridos
+
+    //f
+    elquantidade.innerText = vetor.length
+    elmedia.innerText = ResultadoMedia
+    elsoma.innerText = soma
+    
+    //g
+    elnum.value = ''
+    elnum.focus()
+
+    //7
+    elacumular.addEventListener('click', valorDigitado)
+
+
+
+    </script>
+</body>
+
+</html>

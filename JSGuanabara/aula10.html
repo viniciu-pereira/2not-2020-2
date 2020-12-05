@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de modelo</title>
+
+    <style>
+    div#area {
+        background: green;
+        color: white;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+    }
+    </style>
+    <script>
+        'use strict' // use strict impede que variaveis sejam declaradas sem o uso de let var ou const, e alem disso, comentario pode ser usado como //
+        //iniciar variaveis diretamente é má pratica de programacao
+       
+    
+        </script>
+</head>
+<body>
+
+<div id="area"> Interaja...</div>
+    <script>
+    let a = document.querySelector('#area')
+    a.addEventListener('click', clicar)
+    a.addEventListener('mouseover', MouseDentro)
+    a.addEventListener('mouseout', MouseSaiu)
+
+    function clicar(){
+        a.innerText = 'clicou'
+    }
+
+    function MouseSaiu(){
+        a.innerText = 'Mouse saiu'
+    }
+
+    function MouseDentro(){
+        a.innerText = 'Mouse Entrou'
+    }
+    </script>
+</body>
+</html>

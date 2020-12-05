@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+
+        /*
+
+            No documento HTML, coloque um elemento <select> (veja ex10) tendo
+            como opções os números de 1 a 12, e uma <div> de resultado.
+
+            Em JS, escreva uma função que receba um número entre 1 e 12 e retorne
+            o nome do mês correspondente (janeiro, fevereiro, etc.)
+
+            Escreva outra função que leia qual o valor selecionado no <select> e 
+            efetue uma chamada à função anterior, passando esse valor como parâmetro
+            e capturando o resultado. Escreva o resultado na <div>.
+
+            Finalmente, associe a segunda função ao evento 'change' do <select>.
+
+        */
+        
+    </script>
+</head>
+
+<body>
+
+    <h1> Ex14-Mostragem de mes </h1>
+    <label>Meses</label>
+    <div>
+        <select id="mes">
+            <option>Selecione</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+        </select> 
+    </div>
+
+    <br>
+    <div id="resultado"></div>
+
+<script>
+
+    let elmes = document.querySelector('#mes') //captura o valor do docuemnto e armazena em uma variavel
+    let elresultado = document.querySelector('#resultado') //captura o valor do docuemnto e armazena em uma variavel
+
+    function nomeMes (numMes){//funcao que recebe o numero e da o mes referente aquele numero
+        const meses = ['janeiro','fevereiro','março','abril',
+            'maio','junho','julho','agosto','setembro',
+            'outubro','novembro','dezembro'] //para nao fazer um switch case, um vetor seria uma solução mais simples, pela quantidade de código q deixaria de digitar, so seguir uma lógica de lembrar que o vetor começa a contar no 0
+
+            return meses[numMes - 1] //pega o vetor meses e decresce 1 unidade do valor do mes que foi inserido no select, poderia ter sido feito adicionando mais um valor no inicio do vetor, ms nao é muito indicado
+    }
+
+    function selecaoMudou(){ //funcao nao recebe parametro e verifica qual o numero foi selecionado e chaama a segunda funcao
+        if(elmes.selectedIndex == 0){  //se o valor selecionado no select é 'selecione' nao é valido
+            alert('Insira uma seleção válida')
+            elmes.focus()
+        }else{ //se o numero for valido
+            let nome = nomeMes(elmes.selectedIndex)//chama a função passando o numero do select e a variavel recebe o valor que saiu do return da primeira função
+            elresultado.innerText = nome //insere na div de resultado o valor valor que recebeu no retun da primeira funcao
+        }
+    }
+
+    elmes.addEventListener('change', selecaoMudou)//evento de mudança do select, quando o select muda, executa a funcao2 que valida o dado e em seguida chama a primeira funcao para ver qual o numero do mes e o retoeno escreve na div de resultado.
+
+    
+
+</script>
+</body>
+</html>

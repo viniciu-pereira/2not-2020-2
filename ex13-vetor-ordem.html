@@ -13,6 +13,7 @@
 
     <label>Informe um número inteiro:</label>
     <input id="numero" type="number">
+    <br>
     <button id="inserir">Inserir</button>
     <div id="resultado"></div>
 
@@ -77,7 +78,7 @@
                 for(let elemento of vetor) {
                     texto += elemento + ', '
                 }
-                elResultado.innerText = texto
+                elResultado.innerText = texto //exibir vetor na div
 
                 // Limpa o input
                 elNumero.value = ''
